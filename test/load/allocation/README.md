@@ -103,7 +103,7 @@ availability of the cluster control plane.
 The following commands were used to construct a cluster for testing:
 
 ```bash
-export REGION="us-west1"
+export REGION="us-central1"
 export VERSION="1.23"
 
 gcloud container clusters create scenario-test --cluster-version=$VERSION \

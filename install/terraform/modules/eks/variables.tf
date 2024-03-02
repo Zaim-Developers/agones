@@ -17,7 +17,7 @@ variable "cluster_name" {
 }
 
 variable "region" {
-  default = "us-west-2"
+  default = "us-central1"
 }
 
 variable "machine_type" {

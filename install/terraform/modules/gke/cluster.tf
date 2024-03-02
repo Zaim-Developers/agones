@@ -23,7 +23,7 @@ data "google_client_config" "default" {}
 # Set values to default if not key was not set in original map
 locals {
   project                       = lookup(var.cluster, "project", "agones")
-  location                      = lookup(var.cluster, "location", "us-west1-c")
+  location                      = lookup(var.cluster, "location", "us-central1")
   zone                          = lookup(var.cluster, "zone", "")
   name                          = lookup(var.cluster, "name", "test-cluster")
   machineType                   = lookup(var.cluster, "machineType", "e2-standard-4")
@@ -32,13 +32,13 @@ locals {
   network                       = lookup(var.cluster, "network", "default")
   subnetwork                    = lookup(var.cluster, "subnetwork", "")
   releaseChannel                = lookup(var.cluster, "releaseChannel", "UNSPECIFIED")
-  kubernetesVersion             = lookup(var.cluster, "kubernetesVersion", "1.27")
+  kubernetesVersion             = lookup(var.cluster, "kubernetesVersion", "1.28")
   windowsInitialNodeCount       = lookup(var.cluster, "windowsInitialNodeCount", "0")
   windowsMachineType            = lookup(var.cluster, "windowsMachineType", "e2-standard-4")
   autoscale                     = lookup(var.cluster, "autoscale", false)
   workloadIdentity              = lookup(var.cluster, "workloadIdentity", false)
   minNodeCount                  = lookup(var.cluster, "minNodeCount", "1")
-  maxNodeCount                  = lookup(var.cluster, "maxNodeCount", "5")
+  maxNodeCount                  = lookup(var.cluster, "maxNodeCount", "1")
   maintenanceExclusionStartTime = lookup(var.cluster, "maintenanceExclusionStartTime", null)
   maintenanceExclusionEndTime   = lookup(var.cluster, "maintenanceExclusionEndTime", null)
 }

@@ -38,7 +38,7 @@ variable "project" {
 }
 
 variable "location" {
-  default     = "us-west1"
+  default     = "us-central1"
   description = "The GCP location to create the cluster in"
 }
 

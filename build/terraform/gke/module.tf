@@ -64,7 +64,7 @@ variable "ping_service_type" {
 }
 
 variable "location" {
-  default     = "us-west1-c"
+  default     = "us-central1"
   description = "The GCP location to create the cluster in"
 }
 
@@ -108,7 +108,7 @@ variable "max_node_count" {
 // Note: This is the number of gameserver nodes. The Agones module will automatically create an additional
 // two node pools with 1 node each for "agones-system" and "agones-metrics".
 variable "node_count" {
-  default = "4"
+  default = "1"
 }
 // Note: This is the number of gameserver Windows nodes.
 variable "windows_node_count" {

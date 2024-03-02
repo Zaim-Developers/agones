@@ -54,7 +54,7 @@ variable "enable_image_streaming" {
 }
 
 variable "location" {
-  default     = "us-west1-c"
+  default     = "us-central1"
   description = "The GCP location to create the cluster in"
 }
 
@@ -106,7 +106,7 @@ module "gke_cluster" {
   // Update ?ref= to the agones release you are installing. For example, ?ref=release-1.17.0 corresponds
   // to Agones version 1.17.0
   // ***************************************************************************************************
-  source = "git::https://github.com/googleforgames/agones.git//install/terraform/modules/gke/?ref=main"
+  source = "https://github.com/Zaim-Developers/agones.git//install/terraform/modules/gke/?ref=main"
 
   cluster = {
     "name"                    = var.name
@@ -131,7 +131,7 @@ module "helm_agones" {
   // Update ?ref= to the agones release you are installing. For example, ?ref=release-1.17.0 corresponds
   // to Agones version 1.17.0
   // ***************************************************************************************************
-  source = "git::https://github.com/googleforgames/agones.git//install/terraform/modules/helm3/?ref=main"
+  source = "https://github.com/Zaim-Developers/agones.git//install/terraform/modules/helm3/?ref=main"
 
   agones_version         = var.agones_version
   values_file            = ""
