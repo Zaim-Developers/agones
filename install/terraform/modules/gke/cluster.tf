@@ -27,7 +27,7 @@ locals {
   zone                          = lookup(var.cluster, "zone", "")
   name                          = lookup(var.cluster, "name", "test-cluster")
   machineType                   = lookup(var.cluster, "machineType", "e2-standard-4")
-  initialNodeCount              = lookup(var.cluster, "initialNodeCount", "4")
+  initialNodeCount              = lookup(var.cluster, "initialNodeCount", "1")
   enableImageStreaming          = lookup(var.cluster, "enableImageStreaming", true)
   network                       = lookup(var.cluster, "network", "default")
   subnetwork                    = lookup(var.cluster, "subnetwork", "")
