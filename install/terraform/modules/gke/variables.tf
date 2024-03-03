@@ -23,6 +23,7 @@ variable "cluster" {
     "location"                      = "us-central1"
     "name"                          = "test-cluster"
     "machineType"                   = "e2-standard-4"
+    "disk-size"                     = "30"
     "initialNodeCount"              = "4"
     "project"                       = "agones"
     "network"                       = "default"
@@ -34,7 +35,7 @@ variable "cluster" {
     "autoscale"                     = false
     "workloadIdentity"              = false
     "minNodeCount"                  = "1"
-    "maxNodeCount"                  = "1"
+    "maxNodeCount"                  = "2"
     "maintenanceExclusionStartTime" = null
     "maintenanceExclusionEndTime"   = null
   }

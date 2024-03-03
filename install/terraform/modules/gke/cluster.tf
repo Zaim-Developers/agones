@@ -27,6 +27,7 @@ locals {
   zone                          = lookup(var.cluster, "zone", "")
   name                          = lookup(var.cluster, "name", "test-cluster")
   machineType                   = lookup(var.cluster, "machineType", "e2-standard-4")
+  diskSize                      = lookup(var.cluster, "disk-size", "30")
   initialNodeCount              = lookup(var.cluster, "initialNodeCount", "1")
   enableImageStreaming          = lookup(var.cluster, "enableImageStreaming", true)
   network                       = lookup(var.cluster, "network", "default")
@@ -38,7 +39,7 @@ locals {
   autoscale                     = lookup(var.cluster, "autoscale", false)
   workloadIdentity              = lookup(var.cluster, "workloadIdentity", false)
   minNodeCount                  = lookup(var.cluster, "minNodeCount", "1")
-  maxNodeCount                  = lookup(var.cluster, "maxNodeCount", "1")
+  maxNodeCount                  = lookup(var.cluster, "maxNodeCount", "2")
   maintenanceExclusionStartTime = lookup(var.cluster, "maintenanceExclusionStartTime", null)
   maintenanceExclusionEndTime   = lookup(var.cluster, "maintenanceExclusionEndTime", null)
 }
@@ -151,6 +152,7 @@ resource "google_container_node_pool" "default" {
 
   node_config {
     machine_type = local.machineType
+    disk_size_gb = local.diskSize
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only",
@@ -181,7 +183,8 @@ resource "google_container_node_pool" "agones-system" {
   }
 
   node_config {
-    machine_type = "e2-standard-4"
+    machine_type = local.machineType
+    disk_size_gb = local.diskSize
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only",
@@ -219,7 +222,8 @@ resource "google_container_node_pool" "agones-metrics" {
   }
 
   node_config {
-    machine_type = "e2-standard-4"
+    machine_type = local.machineType
+    disk_size_gb = local.diskSize
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only",
@@ -261,6 +265,7 @@ resource "google_container_node_pool" "windows" {
   node_config {
     image_type   = "WINDOWS_LTSC_CONTAINERD"
     machine_type = local.windowsMachineType
+    disk_size_gb = local.diskSize
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only",
