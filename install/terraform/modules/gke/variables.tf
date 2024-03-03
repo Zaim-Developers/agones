@@ -20,11 +20,11 @@ variable "cluster" {
   type        = map(any)
 
   default = {
-    "location"                      = "us-central1"
+    "location"                      = "us-west1-c"
     "name"                          = "test-cluster"
     "machineType"                   = "e2-standard-4"
     "disk-size"                     = "30"
-    "initialNodeCount"              = "4"
+    "initialNodeCount"              = "1"
     "project"                       = "agones"
     "network"                       = "default"
     "subnetwork"                    = ""

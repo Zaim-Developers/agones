@@ -22,7 +22,7 @@ variable "cluster" {
   default = {
     "name"                          = "test-cluster"
     "project"                       = "agones"
-    "location"                      = "us-central1"
+    "location"                      = "us-west1"
     "disk-size"                     = "30"
     "network"                       = "default"
     "subnetwork"                    = ""
