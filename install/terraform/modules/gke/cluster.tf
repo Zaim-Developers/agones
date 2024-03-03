@@ -152,7 +152,7 @@ resource "google_container_node_pool" "default" {
 
   node_config {
     machine_type = local.machineType
-    disk_size_gb = local.diskSize
+    disk_size_gb = 20
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only",
@@ -184,7 +184,7 @@ resource "google_container_node_pool" "agones-system" {
 
   node_config {
     machine_type = local.machineType
-    disk_size_gb = local.diskSize
+    disk_size_gb = 20
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only",
@@ -223,7 +223,7 @@ resource "google_container_node_pool" "agones-metrics" {
 
   node_config {
     machine_type = local.machineType
-    disk_size_gb = local.diskSize
+    disk_size_gb = 20
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only",
@@ -265,7 +265,7 @@ resource "google_container_node_pool" "windows" {
   node_config {
     image_type   = "WINDOWS_LTSC_CONTAINERD"
     machine_type = local.windowsMachineType
-    disk_size_gb = local.diskSize
+    disk_size_gb = 20
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only",
