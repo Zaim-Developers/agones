@@ -24,7 +24,7 @@ data "google_client_config" "default" {}
 locals {
   project                       = lookup(var.cluster, "project", "agones")
   location                      = lookup(var.cluster, "location", "us-central1")
-  zone                          = lookup(var.cluster, "zone", "")
+  zone                          = lookup(var.cluster, "zone", "us-central1-f")
   name                          = lookup(var.cluster, "name", "test-cluster")
   machineType                   = lookup(var.cluster, "machineType", "e2-standard-4")
   diskSize                      = lookup(var.cluster, "disk-size", "30")
