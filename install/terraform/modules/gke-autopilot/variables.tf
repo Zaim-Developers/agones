@@ -23,7 +23,7 @@ variable "cluster" {
     "name"                          = "test-cluster"
     "project"                       = "agones"
     "location"                      = "us-west1"
-    "disk-size"                     = "30"
+    "disk_size"                     = "20"
     "network"                       = "default"
     "subnetwork"                    = ""
     "releaseChannel"                = "REGULAR"

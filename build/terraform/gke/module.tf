@@ -105,10 +105,14 @@ variable "max_node_count" {
   default = "5"
 }
 
+variable "disk_size" {
+  default = 20
+}
+
 // Note: This is the number of gameserver nodes. The Agones module will automatically create an additional
 // two node pools with 1 node each for "agones-system" and "agones-metrics".
 variable "node_count" {
-  default = "1"
+  default = "4"
 }
 // Note: This is the number of gameserver Windows nodes.
 variable "windows_node_count" {

@@ -23,7 +23,7 @@ variable "cluster" {
     "location"                      = "us-west1"
     "name"                          = "test-cluster"
     "machineType"                   = "e2-standard-4"
-    "disk-size"                     = "30"
+    "disk_size"                     = "20"
     "initialNodeCount"              = "2"
     "project"                       = "agones"
     "network"                       = "default"

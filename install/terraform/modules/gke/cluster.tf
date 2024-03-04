@@ -27,7 +27,7 @@ locals {
   zone                          = lookup(var.cluster, "zone", "")
   name                          = lookup(var.cluster, "name", "test-cluster")
   machineType                   = lookup(var.cluster, "machineType", "e2-standard-4")
-  diskSize                      = lookup(var.cluster, "disk-size", "30")
+  diskSize                      = lookup(var.cluster, "disk_size", "20")
   initialNodeCount              = lookup(var.cluster, "initialNodeCount", "1")
   enableImageStreaming          = lookup(var.cluster, "enableImageStreaming", true)
   network                       = lookup(var.cluster, "network", "default")
@@ -152,7 +152,7 @@ resource "google_container_node_pool" "default" {
 
   node_config {
     machine_type = local.machineType
-    disk_size_gb = 20
+    disk_size_gb = local.diskSize
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only",
@@ -184,7 +184,7 @@ resource "google_container_node_pool" "agones-system" {
 
   node_config {
     machine_type = local.machineType
-    disk_size_gb = 20
+    disk_size_gb = local.diskSize
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only",
@@ -223,7 +223,7 @@ resource "google_container_node_pool" "agones-metrics" {
 
   node_config {
     machine_type = local.machineType
-    disk_size_gb = 20
+    disk_size_gb = local.diskSize
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only",
@@ -265,7 +265,7 @@ resource "google_container_node_pool" "windows" {
   node_config {
     image_type   = "WINDOWS_LTSC_CONTAINERD"
     machine_type = local.windowsMachineType
-    disk_size_gb = 20
+    disk_size_gb = local.diskSize
 
     oauth_scopes = [
       "https://www.googleapis.com/auth/devstorage.read_only",
