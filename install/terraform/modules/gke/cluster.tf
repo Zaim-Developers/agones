@@ -39,7 +39,7 @@ locals {
   autoscale                     = lookup(var.cluster, "autoscale", true)
   workloadIdentity              = lookup(var.cluster, "workloadIdentity", false)
   minNodeCount                  = lookup(var.cluster, "minNodeCount", "1")
-  maxNodeCount                  = lookup(var.cluster, "maxNodeCount", "4")
+  maxNodeCount                  = lookup(var.cluster, "maxNodeCount", "6")
   maintenanceExclusionStartTime = lookup(var.cluster, "maintenanceExclusionStartTime", null)
   maintenanceExclusionEndTime   = lookup(var.cluster, "maintenanceExclusionEndTime", null)
 }
