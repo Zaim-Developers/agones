@@ -20,11 +20,11 @@ variable "cluster" {
   type        = map(any)
 
   default = {
-    "location"                      = "us-west1-c"
+    "location"                      = "us-west1"
     "name"                          = "test-cluster"
     "machineType"                   = "e2-standard-4"
     "disk-size"                     = "30"
-    "initialNodeCount"              = "1"
+    "initialNodeCount"              = "2"
     "project"                       = "agones"
     "network"                       = "default"
     "subnetwork"                    = ""
@@ -32,10 +32,10 @@ variable "cluster" {
     "kubernetesVersion"             = "1.28"
     "windowsInitialNodeCount"       = "0"
     "windowsMachineType"            = "e2-standard-4"
-    "autoscale"                     = false
+    "autoscale"                     = true
     "workloadIdentity"              = false
-    "minNodeCount"                  = "1"
-    "maxNodeCount"                  = "2"
+    "minNodeCount"                  = "2"
+    "maxNodeCount"                  = "6"
     "maintenanceExclusionStartTime" = null
     "maintenanceExclusionEndTime"   = null
   }

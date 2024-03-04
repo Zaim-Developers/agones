@@ -95,6 +95,10 @@ resource "google_container_cluster" "primary" {
     }
   }
 
+  node_config {
+    disk_size_gb = 20
+  }
+  
   dns_config {
     cluster_dns        = "CLOUD_DNS"
     cluster_dns_domain = "cluster.local"
